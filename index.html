@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Projects Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --text-primary: #e2e8f0;
+            --text-secondary: #64748b;
+            --accent-primary: #10b981;
+            --accent-secondary: #3b82f6;
+        }
+
+        /* Dark mode */
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Light mode */
+        body.light-theme {
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --accent-primary: #059669;
+            --accent-secondary: #2563eb;
+        }
+
+        .project-card {
+            background-color: var(--bg-secondary);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+        }
+
+        .social-links a {
+            color: var(--text-secondary);
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-primary);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .watermark {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body class="font-mono p-4 sm:p-8">
+    <div class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-adjust"></i>
+    </div>
+
+    <div class="container mx-auto">
+        <header class="text-center mb-12">
+            <h1 class="text-3xl sm:text-4xl font-bold text-green-400 mb-4">Python Projects Portfolio</h1>
+            <p class="text-gray-400 text-sm sm:text-base">A comprehensive showcase of Python programming skills</p>
+        </header>
+
+        <!-- Social Links -->
+        <div class="social-links flex justify-center mb-8">
+            <a href="https://github.com/riddhiairan" target="Github" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/riddhiairan" target="Linkedin" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://twitter.com/riddhiairan" target="x" title="X">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="mailto:datascience.riddhi@gmail.com" title="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+
+        <!-- Beginner Projects Section -->
+        <section class="mb-16">
+            <h2 class="text-2xl sm:text-3xl font-semibold text-blue-300 mb-8">Beginner Python Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Project Cards (same as previous version) -->
+                <div class="project-card rounded-lg overflow-hidden shadow-lg">
+                    <div class="h-32 sm:h-48 bg-cover bg-center" style="background-image: url('/api/placeholder/400/250')"></div>
+                    <div class="p-4 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-bold text-green-400 mb-2">Calculator App</h3>
+                        <p class="text-gray-300 mb-4 text-sm sm:text-base">Basic arithmetic operations and user input handling</p>
+                        <div class="flex items-center">
+                            <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs mr-2">Variables</span>
+                            <span class="bg-purple-500 text-white px-2 py-1 rounded-full text-xs">Functions</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeat similar structure for other project cards -->
+            </div>
+        </section>
+
+        <!-- Intermediate Projects Section -->
+        <section>
+            <h2 class="text-2xl sm:text-3xl font-semibold text-blue-300 mb-8">Intermediate Python Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Project Cards (similar to Beginner section) -->
+                <div class="project-card rounded-lg overflow-hidden shadow-lg">
+                    <div class="h-32 sm:h-48 bg-cover bg-center" style="background-image: url('/api/placeholder/400/250')"></div>
+                    <div class="p-4 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-bold text-green-400 mb-2">Web Scraper</h3>
+                        <p class="text-gray-300 mb-4 text-sm sm:text-base">Data extraction and parsing techniques</p>
+                        <div class="flex items-center">
+                            <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs mr-2">Requests</span>
+                            <span class="bg-purple-500 text-white px-2 py-1 rounded-full text-xs">BeautifulSoup</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeat similar structure for other project cards -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Watermark -->
+    <div class="watermark">
+        © 2024 Riddhi | Python Portfolio
+    </div>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('light-theme');
+        }
+    </script>
+</body>
+</html>
