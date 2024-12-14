@@ -43,116 +43,145 @@
             box-shadow: 0 10px 15px rgba(0,0,0,0.3);
         }
 
-        .social-links a {
-            color: var(--text-secondary);
-            margin: 0 10px;
-            font-size: 1.5rem;
-            transition: color 0.3s;
+        .project-card-link {
+            text-decoration: none;
+            color: inherit;
         }
 
-        .social-links a:hover {
-            color: var(--accent-primary);
+        .project-gif {
+            height: 8rem;
+            width: 100%;
+            background-color: #2c3e50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
         }
 
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: var(--bg-secondary);
-            color: var(--text-primary);
-            border-radius: 50%;
-            padding: 10px;
-            cursor: pointer;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        .watermark {
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-            opacity: 0.7;
-        }
+        /* Rest of your existing styles remain the same */
     </style>
 </head>
 <body class="font-mono p-4 sm:p-8">
-    <div class="theme-toggle" onclick="toggleTheme()">
-        <i class="fas fa-adjust"></i>
-    </div>
-
     <div class="container mx-auto">
         <header class="text-center mb-12">
             <h1 class="text-3xl sm:text-4xl font-bold text-green-400 mb-4">Python Projects Portfolio</h1>
-            <p class="text-gray-400 text-sm sm:text-base">A comprehensive showcase of Python programming skills</p>
+            <p class="text-gray-400 text-sm sm:text-base">A comprehensive showcase of Python Projects</p>
         </header>
-
-        <!-- Social Links -->
-        <div class="social-links flex justify-center mb-8">
-            <a href="https://github.com/riddhiairan" target="Github" title="GitHub">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://linkedin.com/in/riddhiairan" target="Linkedin" title="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://twitter.com/riddhiairan" target="x" title="X">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="mailto:datascience.riddhi@gmail.com" title="Email">
-                <i class="fas fa-envelope"></i>
-            </a>
-        </div>
 
         <!-- Beginner Projects Section -->
         <section class="mb-16">
             <h2 class="text-2xl sm:text-3xl font-semibold text-blue-300 mb-8">Beginner Python Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-                <!-- Project Cards (same as previous version) -->
-                <div class="project-card rounded-lg overflow-hidden shadow-lg">
-                    <div class="h-32 sm:h-48 bg-cover bg-center" style="background-image: url('/api/placeholder/400/250')"></div>
-                    <div class="p-4 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-bold text-green-400 mb-2">Calculator App</h3>
-                        <p class="text-gray-300 mb-4 text-sm sm:text-base">Basic arithmetic operations and user input handling</p>
-                        <div class="flex items-center">
-                            <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs mr-2">Variables</span>
-                            <span class="bg-purple-500 text-white px-2 py-1 rounded-full text-xs">Functions</span>
+                <!-- Band Name Generator Project -->
+                <a href="https://pythonprojects-bandnamegenerator.streamlit.app/" target="_blank" class="project-card-link">
+                    <div class="project-card rounded-lg overflow-hidden shadow-lg">
+                        <div class="project-gif">
+                            <span><img src="1project.gif" alt="Project GIF"></span>
+                        </div>
+                        <div class="p-4 sm:p-6">
+                            <h3 class="text-lg sm:text-xl font-bold text-green-400 mb-2">Band Name Generator</h3>
+                            <p class="text-gray-300 mb-4 text-sm sm:text-base">Create unique band names with Python</p>
+                            <div class="flex items-center">
+                                <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs mr-2">Streamlit</span>
+                                <span class="bg-purple-500 text-white px-2 py-1 rounded-full text-xs">Web App</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Repeat similar structure for other project cards -->
+                </a>
+
+                <!-- Tip Calculator Project -->
+                <a href="https://tipcalculator.streamlit.app" target="_blank" class="project-card-link">
+                    <div class="project-card rounded-lg overflow-hidden shadow-lg">
+                        <div class="project-gif">
+                            <span>Tip Calculator</span>
+                        </div>
+                        <div class="p-4 sm:p-6">
+                            <h3 class="text-lg sm:text-xl font-bold text-green-400 mb-2">Tip Calculator</h3>
+                            <p class="text-gray-300 mb-4 text-sm sm:text-base">Calculate tips with ease</p>
+                            <div class="flex items-center">
+                                <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs mr-2">Streamlit</span>
+                                <span class="bg-purple-500 text-white px-2 py-1 rounded-full text-xs">Finance</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Password Generator Project -->
+                <a href="https://passwordgenerator.streamlit.app" target="_blank" class="project-card-link">
+                    <div class="project-card rounded-lg overflow-hidden shadow-lg">
+                        <div class="project-gif">
+                            <span>Password Generator</span>
+                        </div>
+                        <div class="p-4 sm:p-6">
+                            <h3 class="text-lg sm:text-xl font-bold text-green-400 mb-2">Password Generator</h3>
+                            <p class="text-gray-300 mb-4 text-sm sm:text-base">Generate secure passwords</p>
+                            <div class="flex items-center">
+                                <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs mr-2">Streamlit</span>
+                                <span class="bg-purple-500 text-white px-2 py-1 rounded-full text-xs">Security</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
             </div>
         </section>
 
         <!-- Intermediate Projects Section -->
         <section>
-            <h2 class="text-2xl sm:text-3xl font-semibold text-blue-300 mb-8">Intermediate Python Projects</h2>
+            <h2 class="text-2xl sm:text-3xl font-semibold text-blue-300 mb-8">Intermediate Streamlit Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-                <!-- Project Cards (similar to Beginner section) -->
-                <div class="project-card rounded-lg overflow-hidden shadow-lg">
-                    <div class="h-32 sm:h-48 bg-cover bg-center" style="background-image: url('/api/placeholder/400/250')"></div>
-                    <div class="p-4 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-bold text-green-400 mb-2">Web Scraper</h3>
-                        <p class="text-gray-300 mb-4 text-sm sm:text-base">Data extraction and parsing techniques</p>
-                        <div class="flex items-center">
-                            <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs mr-2">Requests</span>
-                            <span class="bg-purple-500 text-white px-2 py-1 rounded-full text-xs">BeautifulSoup</span>
+                <!-- Web Scraper Project -->
+                <a href="https://webscraper.streamlit.app" target="_blank" class="project-card-link">
+                    <div class="project-card rounded-lg overflow-hidden shadow-lg">
+                        <div class="project-gif">
+                            <span>Web Scraper</span>
+                        </div>
+                        <div class="p-4 sm:p-6">
+                            <h3 class="text-lg sm:text-xl font-bold text-green-400 mb-2">Web Scraper</h3>
+                            <p class="text-gray-300 mb-4 text-sm sm:text-base">Extract data from websites</p>
+                            <div class="flex items-center">
+                                <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs mr-2">Streamlit</span>
+                                <span class="bg-purple-500 text-white px-2 py-1 rounded-full text-xs">Data</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Repeat similar structure for other project cards -->
+                </a>
+
+                <!-- Stock Trading News Alert Project -->
+                <a href="https://stocktradingnews.streamlit.app" target="_blank" class="project-card-link">
+                    <div class="project-card rounded-lg overflow-hidden shadow-lg">
+                        <div class="project-gif">
+                            <span>Stock Trading News</span>
+                        </div>
+                        <div class="p-4 sm:p-6">
+                            <h3 class="text-lg sm:text-xl font-bold text-green-400 mb-2">Stock Trading News</h3>
+                            <p class="text-gray-300 mb-4 text-sm sm:text-base">Latest stock market insights</p>
+                            <div class="flex items-center">
+                                <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs mr-2">Streamlit</span>
+                                <span class="bg-purple-500 text-white px-2 py-1 rounded-full text-xs">Finance</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Automated Email Sender Project -->
+                <a href="https://automatedemailsender.streamlit.app" target="_blank" class="project-card-link">
+                    <div class="project-card rounded-lg overflow-hidden shadow-lg">
+                        <div class="project-gif">
+                            <span>Automated Email Sender</span>
+                        </div>
+                        <div class="p-4 sm:p-6">
+                            <h3 class="text-lg sm:text-xl font-bold text-green-400 mb-2">Automated Email Sender</h3>
+                            <p class="text-gray-300 mb-4 text-sm sm:text-base">Automate email communications</p>
+                            <div class="flex items-center">
+                                <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs mr-2">Streamlit</span>
+                                <span class="bg-purple-500 text-white px-2 py-1 rounded-full text-xs">Automation</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
             </div>
         </section>
     </div>
-
-    <!-- Watermark -->
-    <div class="watermark">
-        © 2024 Riddhi | Python Portfolio
-    </div>
-
-    <script>
-        function toggleTheme() {
-            document.body.classList.toggle('light-theme');
-        }
-    </script>
 </body>
 </html>
