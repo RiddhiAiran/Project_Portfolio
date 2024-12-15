@@ -48,22 +48,86 @@
             color: inherit;
         }
 
+        /* NEW: Specific GIF styling */
         .project-gif {
-            height: 8rem;
+            position: relative;
             width: 100%;
+            height: 250px; /* Increased height */
             background-color: #2c3e50;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: white;
-            font-weight: bold;
+            overflow: hidden;
         }
 
-        /* Rest of your existing styles remain the same */
+        .project-gif img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain; /* Changed from cover to contain */
+            object-position: center;
+        }
+
+        .project-gif span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+        /* NEW: Personal Header Styles */
+        .personal-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: var(--accent-primary);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+            color: var(--accent-secondary);
+        }
     </style>
 </head>
 <body class="font-mono p-4 sm:p-8">
     <div class="container mx-auto">
+        <div class="container mx-auto">
+            <!-- NEW: Personal Header Section -->
+            <div class="personal-header">
+                <h1 class="text-4xl sm:text-5xl font-bold text-green-400 mb-2">Riddhi</h1>
+                <p class="text-xl sm:text-2xl text-gray-400 mb-4">Python Developer</p>
+                
+                <!-- Social Links -->
+                <div class="social-links">
+                    <a href="https://github.com/RiddhiAiran" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/RiddhiAiran/" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://twitter.com/RiddhiAiran" target="_blank" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="mailto:datascience.riddhi@gmail.com" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
         <header class="text-center mb-12">
             <h1 class="text-3xl sm:text-4xl font-bold text-green-400 mb-4">Python Projects Portfolio</h1>
             <p class="text-gray-400 text-sm sm:text-base">A comprehensive showcase of Python Projects</p>
