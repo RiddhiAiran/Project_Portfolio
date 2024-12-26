@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riddhi's Python Portfolio | Developer & Programmer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .difficulty-tab {
+            transition: all 0.3s ease;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .difficulty-tab::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .difficulty-tab.active::after {
+            transform: scaleX(1);
+        }
+        
+        .difficulty-tab.basic::after { background-color: #10B981; }
+        .difficulty-tab.intermediate::after { background-color: #3B82F6; }
+        .difficulty-tab.advanced::after { background-color: #8B5CF6; }
+        
+        .project-count-badge {
+            font-size: 0.8rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 9999px;
+            margin-left: 0.5rem;
+        }
+        
+        .project-card {
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-grid {
+            transition: opacity 0.3s ease;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .fade {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+    <header class="w-full bg-gray-900/50 backdrop-blur-lg border-b border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Name -->
+                <div class="flex items-center space-x-4">
+                    <h1 class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                        Riddhi Airan
+                    </h1>
+                    <span class="text-gray-400 hidden sm:inline">|</span>
+                    <span class="text-gray-400 hidden sm:inline">Python Developer</span>
+                </div>
+    
+                <!-- Social Links -->
+                <div class="flex items-center space-x-4">
+                    <a href="https://github.com/RiddhiAiran" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/riddhiairan" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="https://twitter.com/riddhiairan" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="mailto:riddhiairan@gmail.com" 
+                       class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="mb-16 p-8">
+        <h2 class="text-4xl font-bold text-white mb-12 text-center">Featured Projects</h2>
+        
+        <!-- Difficulty Tabs -->
+        <div class="flex justify-center gap-8 mb-12">
+            <div class="difficulty-tab basic active group" data-tab="basic">
+                <div class="flex items-center">
+                    <i class="fas fa-seedling text-green-500 mr-2"></i>
+                    <span class="text-white text-lg">Basic</span>
+                    <span class="project-count-badge bg-green-500/20 text-green-400">25 Projects</span>
+                </div>
+            </div>
+            <div class="difficulty-tab intermediate group" data-tab="intermediate">
+                <div class="flex items-center">
+                    <i class="fas fa-code-branch text-blue-500 mr-2"></i>
+                    <span class="text-white text-lg">Intermediate</span>
+                    <span class="project-count-badge bg-blue-500/20 text-blue-400">25 Projects</span>
+                </div>
+            </div>
+            <div class="difficulty-tab advanced group" data-tab="advanced">
+                <div class="flex items-center">
+                    <i class="fas fa-rocket text-purple-500 mr-2"></i>
+                    <span class="text-white text-lg">Advanced</span>
+                    <span class="project-count-badge bg-purple-500/20 text-purple-400">50 Projects</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Basic Projects Grid -->
+        <div class="project-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="basic-projects">
+
+            <!-- 18. Python Calculator -->
+            <div class="project-card bg-gray-800/50 rounded-xl p-6 backdrop-blur-lg border border-gray-700/50">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-white">Python Calculator</h3>
+                    <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm">Basic</span>
+                </div>
+                <p class="text-gray-400 mb-6">generates a secure, random password</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-sm">Functions</span>
+                    <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-sm">Loops</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <a href="https://github.com/RiddhiAiran/Basic-Python-Projects/tree/main/18_PyCalculator" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">
+                        <i class="fab fa-github mr-2"></i>View Code
+                    </a>
+                    <span class="text-gray-500">
+                        <i class="fas fa-clock mr-2"></i>30 mints
+                    </span>
+                </div>
+            </div>
+
+            <!-- 17. Leap Year Checker -->
+            <div class="project-card bg-gray-800/50 rounded-xl p-6 backdrop-blur-lg border border-gray-700/50">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-white">Leap Year Checker</h3>
+                    <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm">Basic</span>
+                </div>
+                <p class="text-gray-400 mb-6">Checks For Leap Year</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-sm">Functions</span>
+                    <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-sm">Python Loops</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <a href="https://github.com/RiddhiAiran/Basic-Python-Projects/tree/main/17_Leap_Year" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">
+                        <i class="fab fa-github mr-2"></i>View Code
+                    </a>
+                    <span class="text-gray-500">
+                        <i class="fas fa-clock mr-2"></i>10 mints
+                    </span>
+                </div>
+            </div>
+            <!-- 16. The Secret Auction -->
+            <div class="project-card bg-gray-800/50 rounded-xl p-6 backdrop-blur-lg border border-gray-700/50">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-white">The Secret Auctionr</h3>
+                    <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm">Basic</span>
+                </div>
+                <p class="text-gray-400 mb-6">Private Bidding Auction</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm">Dictionaries</span>
+                    <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-sm">Python Loops</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <a href="https://github.com/RiddhiAiran/Basic-Python-Projects/tree/main/16_Secret_Auction" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">
+                        <i class="fab fa-github mr-2"></i>View Code
+                    </a>
+                    <span class="text-gray-500">
+                        <i class="fas fa-clock mr-2"></i>30 mints
+                    </span>
+                </div>
+            </div>
+            <!-- 15. Love Calculator  -->
+            <div class="project-card bg-gray-800/50 rounded-xl p-6 backdrop-blur-lg border border-gray-700/50">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-white">Love Calculator</h3>
+                    <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm">Basic</span>
+                </div>
+                <p class="text-gray-400 mb-6">Fun OG Love Calculator</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm">Dictionaries</span>
+                    <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-sm">Python Loops</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <a href="https://github.com/RiddhiAiran/Basic-Python-Projects/tree/main/15_Love_calculator" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">
+                        <i class="fab fa-github mr-2"></i>View Code
+                    </a>
+                    <span class="text-gray-500">
+                        <i class="fas fa-clock mr-2"></i>30 mints
+                    </span>
+                </div>
+            </div>
+            <!-- 14. Caesar Cipher Encoder/Decoder -->
+            <div class="project-card bg-gray-800/50 rounded-xl p-6 backdrop-blur-lg border border-gray-700/50">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-white">Caesar Cipher</h3>
+                    <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm">Basic</span>
+                </div>
+                <p class="text-gray-400 mb-6">Encoder Decoder</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm">Function</span>
+                    <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-sm">Python Loops</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <a href="https://github.com/RiddhiAiran/Basic-Python-Projects/tree/main/14_Caesar_Cipher" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">
+                        <i class="fab fa-github mr-2"></i>View Code
+                    </a>
+                    <span class="text-gray-500">
+                        <i class="fas fa-clock mr-2"></i>1 Hour
+                    </span>
+                </div>
+            </div>
+            <!-- 13. Hangman Game -->
+            <div class="project-card bg-gray-800/50 rounded-xl p-6 backdrop-blur-lg border border-gray-700/50">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-white">Hangman Game</h3>
+                    <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm">Basic</span>
+                </div>
+                <p class="text-gray-400 mb-6">Play Game</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm">Functions</span>
+                    <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-sm">String</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <a href="https://github.com/RiddhiAiran/Basic-Python-Projects/tree/main/13_Hangman" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">
+                        <i class="fab fa-github mr-2"></i>View Code
+                    </a>
+                    <span class="text-gray-500">
+                        <i class="fas fa-clock mr-2"></i>1 Hour
+                    </span>
+                </div>
+            </div>
+
+            <!-- 12. Python Password Generator -->
+            <div class="project-card bg-gray-800/50 rounded-xl p-6 backdrop-blur-lg border border-gray-700/50">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-white">PyPassword Generator</h3>
+                    <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm">Basic</span>
+                </div>
+                <p class="text-gray-400 mb-6">generates a secure, random password</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm">Randomisation</span>
+                    <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-sm">Python Loops</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <a href="https://github.com/RiddhiAiran/Basic-Python-Projects/tree/main/12_Password_Generator" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">
+                        <i class="fab fa-github mr-2"></i>View Code
+                    </a>
+                    <span class="text-gray-500">
+                        <i class="fas fa-clock mr-2"></i>30 mints
+                    </span>
+                </div>
+            </div>
+
+            <!-- 11. Rock, Paper, Scissors -->
+            <div class="project-card bg-gray-800/50 rounded-xl p-6 backdrop-blur-lg border border-gray-700/50">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-white">Rock Paper Scissors</h3>
+                    <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm">Basic</span>
+                </div>
+                <p class="text-gray-400 mb-6">lets you play the classic game</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm">Randomisation</span>
+                    <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-sm">Lists</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <a href="https://github.com/RiddhiAiran/Basic-Python-Projects/tree/main/11_Rock_Paper_Scissors" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">
+                        <i class="fab fa-github mr-2"></i>View Code
+                    </a>
+                    <span class="text-gray-500">
+                        <i class="fas fa-clock mr-2"></i>30 mints
+                    </span>
+                </div>
+            </div>
+
+            <!-- 10. Banker Roulette -->
+            <div class="project-card bg-gray-800/50 rounded-xl p-6 backdrop-blur-lg border border-gray-700/50">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-white">Banker Roulette</h3>
+                    <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm">Basic</span>
+                </div>
+                <p class="text-gray-400 mb-6">Pick a random participant to pay the bill</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm">Randomisation</span>
+                    <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-sm">Lists</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <a href="https://github.com/RiddhiAiran/Basic-Python-Projects/tree/main/10_Banker_Roulette" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">
+                        <i class="fab fa-github mr-2"></i>View Code
+                    </a>
+                    <span class="text-gray-500">
+                        <i class="fas fa-clock mr-2"></i>10 mints
+                    </span>
+                </div>
+            </div>
+
+            <!-- 9. Coin Flipper -->
+            <div class="project-card bg-gray-800/50 rounded-xl p-6 backdrop-blur-lg border border-gray-700/50">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-white">Coin Flipper</h3>
+                    <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm">Basic</span>
+                </div>
+                <p class="text-gray-400 mb-6">Flip a Coin</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm">Randomisation</span>
+                    <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-sm">Lists</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <a href="https://github.com/RiddhiAiran/Basic-Python-Projects/tree/main/09_Coin_Flipper" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">
+                        <i class="fab fa-github mr-2"></i>View Code
+                    </a>
+                    <span class="text-gray-500">
+                        <i class="fas fa-clock mr-2"></i>10 mints
+                    </span>
+                </div>
+            </div>
+
+            <!-- 8. Random Number Generator -->
+            <div class="project-card bg-gray-800/50 rounded-xl p-6 backdrop-blur-lg border border-gray-700/50">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-white">Random Number Generator</h3>
+                    <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm">Basic</span>
+                </div>
+                <p class="text-gray-400 mb-6">Generating Random Digits</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm">Randomisation</span>
+                    <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-sm">Lists</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <a href="https://github.com/RiddhiAiran/Basic-Python-Projects/tree/main/08_Random_Number_Generator" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">
+                        <i class="fab fa-github mr-2"></i>View Code
+                    </a>
+                    <span class="text-gray-500">
+                        <i class="fas fa-clock mr-2"></i>10 mints
+                    </span>
+                </div>
+            </div>
+
+            <!-- 7. Treasure Island -->
+            <div class="project-card bg-gray-800/50 rounded-xl p-6 backdrop-blur-lg border border-gray-700/50">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-white">Treasure Island Game</h3>
+                    <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm">Basic</span>
+                </div>
+                <p class="text-gray-400 mb-6">Creative and Fun game</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm">Control Flow</span>
+                    <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-sm">Logical Operators</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <a href="https://github.com/RiddhiAiran/Basic-Python-Projects/tree/main/07_Treasure_Island" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">
+                        <i class="fab fa-github mr-2"></i>View Code
+                    </a>
+                    <span class="text-gray-500">
+                        <i class="fas fa-clock mr-2"></i>30 mints
+                    </span>
+                </div>
+            </div>
+
+            <!-- 6. Online Pizza Order Machine -->
+            <div class="project-card bg-gray-800/50 rounded-xl p-6 backdrop-blur-lg border border-gray-700/50">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-white">Pizza Order Machine</h3>
+                    <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm">Basic</span>
+                </div>
+                <p class="text-gray-400 mb-6">Calculate Bill and Order Pizza</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm">Control Flow</span>
+                    <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-sm">Logical Operators</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <a href="https://github.com/RiddhiAiran/Basic-Python-Projects/tree/main/02_BMI_Calculator" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">
+                        <i class="fab fa-github mr-2"></i>View Code
+                    </a>
+                    <span class="text-gray-500">
+                        <i class="fas fa-clock mr-2"></i>30 mints
+                    </span>
+                </div>
+            </div>
+            <!-- 5. Even and Odd Checker -->
+            <div class="project-card bg-gray-800/50 rounded-xl p-6 backdrop-blur-lg border border-gray-700/50">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-white">Even and Odd Number Checker</h3>
+                    <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm">Basic</span>
+                </div>
+                <p class="text-gray-400 mb-6">Checks For Even & Odd </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm">Control Flow</span>
+                    <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-sm">Logical Operators</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <a href="https://github.com/RiddhiAiran/Basic-Python-Projects/tree/main/05_Even_Odd_Checker" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">
+                        <i class="fab fa-github mr-2"></i>View Code
+                    </a>
+                    <span class="text-gray-500">
+                        <i class="fas fa-clock mr-2"></i>30 mints
+                    </span>
+                </div>
+            </div>
+
+            <!-- 4. Roller Coaster Ride -->
+            <div class="project-card bg-gray-800/50 rounded-xl p-6 backdrop-blur-lg border border-gray-700/50">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-white">Roller Coaster Ride</h3>
+                    <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm">Basic</span>
+                </div>
+                <p class="text-gray-400 mb-6">Calculates ride fees</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm">Logical Operators</span>
+                    <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-sm">Control Flow</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <a href="https://github.com/RiddhiAiran/Basic-Python-Projects/tree/main/04_Roller_Coster_Tickets" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">
+                        <i class="fab fa-github mr-2"></i>View Code
+                    </a>
+                    <span class="text-gray-500">
+                        <i class="fas fa-clock mr-2"></i>30 mints
+                    </span>
+                </div>
+            </div>
+
+            <!-- 3. Tip Calculator -->
+            <div class="project-card bg-gray-800/50 rounded-xl p-6 backdrop-blur-lg border border-gray-700/50">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-white">Tip Calculator</h3>
+                    <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm">Basic</span>
+                </div>
+                <p class="text-gray-400 mb-6">Calculate tips with ease</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm">Data Types</span>
+                    <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-sm">Strings</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <a href="https://github.com/RiddhiAiran/Basic-Python-Projects/tree/main/03_Tip_Calculator" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">
+                        <i class="fab fa-github mr-2"></i>View Code
+                    </a>
+                    <span class="text-gray-500">
+                        <i class="fas fa-clock mr-2"></i>30 mints
+                    </span>
+                </div>
+            </div>
+
+            <!-- 2. BMI Calculator -->
+            <div class="project-card bg-gray-800/50 rounded-xl p-6 backdrop-blur-lg border border-gray-700/50">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-white">BMI Calculator</h3>
+                    <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm">Basic</span>
+                </div>
+                <p class="text-gray-400 mb-6">Calculates the Body Mass Index (BMI)</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm">Data Types</span>
+                    <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-sm">Strings</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <a href="https://github.com/RiddhiAiran/Basic-Python-Projects/tree/main/02_BMI_Calculator" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">
+                        <i class="fab fa-github mr-2"></i>View Code
+                    </a>
+                    <span class="text-gray-500">
+                        <i class="fas fa-clock mr-2"></i>30 mints
+                    </span>
+                </div>
+            </div>
+
+
+
+
+            <!-- 1. Basic Project Card -->
+            <div class="project-card bg-gray-800/50 rounded-xl p-6 backdrop-blur-lg border border-gray-700/50">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-white">Band Name Generator</h3>
+                    <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm">Basic</span>
+                </div>
+                <p class="text-gray-400 mb-6">Create a unique and fun Band Name.</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm">Variables</span>
+                    <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-sm">Strings</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <a href="https://github.com/RiddhiAiran/Basic-Python-Projects/tree/main/01_Band_Name_Generator" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">
+                        <i class="fab fa-github mr-2"></i>View Code
+                    </a>
+                    <span class="text-gray-500">
+                        <i class="fas fa-clock mr-2"></i>30 mints
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+
+        
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+        
+
+
+        
+
+        <!-- Intermediate Projects Grid -->
+        <div class="project-grid hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="intermediate-projects">
+            <!-- Intermediate Project Card -->
+            <div class="project-card bg-gray-800/50 rounded-xl p-6 backdrop-blur-lg border border-gray-700/50">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-white">Weather Dashboard</h3>
+                    <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm">Intermediate</span>
+                </div>
+                <p class="text-gray-400 mb-6">Real-time weather dashboard with data visualization using Python and APIs.</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm">Python</span>
+                    <span class="px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-400 text-sm">APIs</span>
+                    <span class="px-3 py-1 rounded-full bg-pink-500/20 text-pink-400 text-sm">Pandas</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors">
+                        <i class="fab fa-github mr-2"></i>View Code
+                    </a>
+                    <span class="text-gray-500">
+                        <i class="fas fa-clock mr-2"></i>4 hrs
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Advanced Projects Grid -->
+        <div class="project-grid hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="advanced-projects">
+            <!-- Advanced Project Card -->
+            <div class="project-card bg-gray-800/50 rounded-xl p-6 backdrop-blur-lg border border-gray-700/50">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-white">AI Image Generator</h3>
+                    <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-sm">Advanced</span>
+                </div>
+                <p class="text-gray-400 mb-6">Generate AI images using deep learning models and Python.</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm">Python</span>
+                    <span class="px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-sm">TensorFlow</span>
+                    <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm">OpenCV</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors">
+                        <i class="fab fa-github mr-2"></i>View Code
+                    </a>
+                    <span class="text-gray-500">
+                        <i class="fas fa-clock mr-2"></i>8 hrs
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Tab switching functionality
+        document.querySelectorAll('.difficulty-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                document.querySelectorAll('.difficulty-tab').forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                // Hide all project grids
+                document.querySelectorAll('.project-grid').forEach(grid => {
+                    grid.classList.add('fade');
+                    setTimeout(() => {
+                        grid.classList.add('hidden');
+                    }, 300);
+                });
+                
+                // Show selected project grid
+                const targetGrid = document.getElementById(`${tab.dataset.tab}-projects`);
+                setTimeout(() => {
+                    targetGrid.classList.remove('hidden');
+                    setTimeout(() => {
+                        targetGrid.classList.remove('fade');
+                    }, 50);
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>
